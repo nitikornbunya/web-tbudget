@@ -33,9 +33,17 @@
       :key="index"
     >
       <div v-if="index !== 0">
-        <p v-bind:style="{ left: item.coordinate[0].x + 'px', top: item.coordinate[2].y + 'px', position: 'absolute'}">
+        <span
+          :title="'left: ' + item.coordinate[0].x + ', top: ' + item.coordinate[3].y"
+          v-bind:style="{
+            left: item.coordinate[0].x + 'px',
+            top: item.coordinate[3].y + 'px',
+            position: 'absolute',
+          }"
+        >
           {{ item.text }}
-        </p>
+        </span>
+        <!-- <span title="I am hovering over the text">This is the text I want to have a mousover</span> -->
       </div>
     </div>
   </div>
